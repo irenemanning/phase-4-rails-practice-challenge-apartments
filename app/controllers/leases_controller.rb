@@ -7,7 +7,8 @@ class LeasesController < ApplicationController
         render json: lease, status: :created
     end
     def destroy
-        lease = Lease.find_by(params[:id])
+        lease = Lease.find(params[:id])
+        byebug
         lease.destroy
         head :no_content
     end
